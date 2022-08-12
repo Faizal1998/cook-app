@@ -1,0 +1,17 @@
+.About h2 {
+  align-self: flex-start;
+  padding: 5px;
+}
+
+.About p {
+  text-indent: 3rem;
+  padding: 10px;
+  text-align: justify;
+}
+
+.About {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 10px 10px 0px 10px;
+}

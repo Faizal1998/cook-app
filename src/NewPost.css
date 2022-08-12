@@ -1,0 +1,29 @@
+.NewPost {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.NewPostForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.NewPostForm textarea {
+  height: 150px;
+}
+
+.NewPostForm button {
+  margin-top: 20px;
+  height: 30px;
+}
+
+.NewPostForm label {
+  padding-top: 10px;
+}
+
+.NewPost h2 {
+  align-self: start;
+  padding: 5px;
+}
