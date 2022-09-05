@@ -169,7 +169,7 @@ function App() {
     
   <div className='App'>
     
-    <Header title={"React Blog App"}/>
+    <Header title={"CircuitBox Blogs"}/>
     <Nav search={search} setSearch={setSearch}/>
     <Routes>
       <Route path="/" element={<Home 
