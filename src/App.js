@@ -12,9 +12,12 @@ import EditPost from './EditPost'
 import About from './About'
 import Missing from './Missing'
 
+import { ref, set,onValue } from "firebase/database";
+
 import { useEffect, useState } from 'react'
 import {format} from'date-fns'
-import api from './API/Post'
+import api from './API/Post';
+import database from './API/Base'
 function App() {
   const[posts,setPosts]=useState([]);
   const [search,setSearch]=useState('');
@@ -25,34 +28,66 @@ function App() {
  const [editBody,setEditBody]=useState('');
  const [keys,setKeys]=useState([]);
  const [db,setDb]=useState([]);
- const history=useNavigate();
-  useEffect(()=>{
-    const fetchPosts=async()=>{
-      try{
-        const response=await api.get('/posts.json');
-        setDb(response.data)
 
-        //console.log(db)
-        setKeys(Object.keys(response.data))
-        
-        if (response && response.data) setPosts(Object.values(response.data))
-      }
-      catch(err)
-      {
-        if(err.response){
-          console.log(err.response.data)
-        }
-        else{
-          console.log(`Error ${err}`)
-        }
-        
-      }
+ const [state,setState] =useState({})
+ const history=useNavigate();
+
+ //for realtime data from firebase 
+ useEffect(()=>{
+  const resultDb = ref(database);
+  onValue(resultDb, (snapshot) => {
+  const data = snapshot.val();
+  if (data) {
+    console.log("data",data.posts);
+    try{
+      setDb(data.posts)
+      //console.log(db)
+      setKeys(Object.keys(data.posts))
+      if (data && data.posts) setPosts(Object.values(data.posts))
     }
-    fetchPosts();
-    //console.log(keys,"key pair",db)
-  },[posts])
+    catch(err)
+    {
+      if(err.response){
+        console.log(err.response.data)
+      }
+      else{
+        console.log(`Error ${err}`)
+      }
+      
+    }
+  }  
+})
+  //  return resultDb
+  },[])
+
+  // useEffect(()=>{
+  //   const fetchPosts=async()=>{
+  //     try{
+  //       const response=await api.get('/posts.json');
+  //       setDb(response.data)
+  //       console.log(response.data)
+
+  //       //console.log(db)
+  //       setKeys(Object.keys(response.data))
+        
+  //       if (response && response.data) setPosts(Object.values(response.data))
+  //     }
+  //     catch(err)
+  //     {
+  //       if(err.response){
+  //         console.log(err.response.data)
+  //       }
+  //       else{
+  //         console.log(`Error ${err}`)
+  //       }
+        
+  //     }
+  //   }
+  //   fetchPosts();
+  //   //console.log(keys,"key pair",db)
+  // },[])
   useEffect(()=>{
-    //console.log("post",posts)
+    console.log("post",posts)
     const filteredResults=posts.filter(post=>
       
       ((post.body).toLowerCase().includes(search.toLowerCase()))
