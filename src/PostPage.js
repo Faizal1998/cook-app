@@ -3,6 +3,15 @@ import './Post.css'
 const PostPage = ({posts,handleDelete}) => {
     const { id }=useParams();
     const post=posts.find(post=>(post.id).toString()===id);
+    const Body = () =>//new line implementation
+          post.body.split("\n").map((value, index) => {
+          return (
+            <span key={index}>
+              {value}
+              <br />
+            </span>
+          )
+        })
     return (
       <main className='Post'>
         <article className='Post'>
@@ -10,7 +19,8 @@ const PostPage = ({posts,handleDelete}) => {
             <>
             <h2>{post.title}</h2>
             <p className='PostDate'>{post.datetime}</p>
-            <p className='PostBody'>{post.body}</p>
+            <p className='PostBody'>{Body()}</p>
+            
             <div className='buttonFlex'>
             <Link to={`/edit/${post.id}`}>
               <button className='EditButton'>Edit</button>
