@@ -12,3 +12,9 @@
   margin-left: 1rem;
   font-size: 2rem;
 }
+
+.Header img{
+  height: 40px;
+  width: 40px;
+  margin-right: 1rem;
+}
