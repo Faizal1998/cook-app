@@ -1,5 +1,5 @@
 import './Home.css'
-import Feed from './Feed'
+import Feed from '../Post/Feed'
 const Home = ({posts}) => {
 
         

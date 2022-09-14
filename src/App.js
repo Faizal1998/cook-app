@@ -1,16 +1,16 @@
 
 import{Route, Routes, useNavigate} from 'react-router-dom'
 import './App.css'
-import Header from './Header'
-import Nav from './Nav'
-import Footer from './Footer'
-import Home from './Home'
-import NewPost from './NewPost'
+import Header from './Components/Header'
+import Nav from './Components/Nav'
+import Footer from './Components/Footer'
+import Home from './Components/Home'
+import NewPost from './Post/NewPost'
 
-import PostPage from './PostPage'
-import EditPost from './EditPost'
-import About from './About'
-import Missing from './Missing'
+import PostPage from './Post/PostPage'
+import EditPost from './Post/EditPost'
+import About from './Components/About'
+import Missing from './Components/Missing'
 
 import { ref, set,onValue } from "firebase/database";
 
