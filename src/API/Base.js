@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from "firebase/database";
+import { getAuth } from "firebase/auth";
 
 // TODO: Replace with your app's Firebase project configuration
 const firebaseConfig = {
@@ -19,3 +20,4 @@ const database = getDatabase(app);
 
 export default database
 
+export const auth = getAuth(app);

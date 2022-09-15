@@ -11,8 +11,9 @@ import PostPage from './Post/PostPage'
 import EditPost from './Post/EditPost'
 import About from './Components/About'
 import Missing from './Components/Missing'
+import Login from './Components/Login'
 
-import { ref, set,onValue } from "firebase/database";
+import { ref, set, onValue, query,limitToFirst, limitToLast, orderByValue, startAt} from "firebase/database";
 
 import { useEffect, useState } from 'react'
 import {format} from'date-fns'
@@ -34,9 +35,12 @@ function App() {
 
  //for realtime data from firebase 
  useEffect(()=>{
-  const resultDb = ref(database);
+  // const resultDb = ref(database);
+  const resultDb = query(ref(database),limitToLast(10));
+  console.log(resultDb)
   onValue(resultDb, (snapshot) => {
   const data = snapshot.val();
+  
   if (data) {
     console.log("data",data.posts);
     try{
@@ -171,6 +175,7 @@ function App() {
     
     <Header title={"CircuitBox Blogs"}/>
     <Nav search={search} setSearch={setSearch}/>
+    {/* <Login /> */}
     <Routes>
       <Route path="/" element={<Home 
       posts={searchResults}

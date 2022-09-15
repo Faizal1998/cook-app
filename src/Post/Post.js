@@ -12,9 +12,9 @@ const Post = ({post}) => {
             
         </Link>
         <p className='PostBody'>{
-            (post.body).length <=25
+            (post.body).length <=50
             ? post.body
-            :`${(post.body).slice(0,25)}..`
+            :`${(post.body).slice(0,50)}..`
         }</p>
         <hr></hr>
     </article>

@@ -1,5 +1,6 @@
 import './Home.css'
 import Feed from '../Post/Feed'
+import Loader from '../util/Loader'
 const Home = ({posts}) => {
 
         
@@ -8,9 +9,12 @@ const Home = ({posts}) => {
         
         {posts.length ? 
         (<Feed posts={posts}/>) 
-        : (<p style={{marginTop:"2rem"}}>
-           No post available.
-          </p>)}
+        : 
+        <Loader />
+        // (<p style={{marginTop:"2rem"}}>
+        //    No post available.
+        //   </p>)
+        }
       </main>
     )
   }
