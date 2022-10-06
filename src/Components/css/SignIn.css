@@ -1,0 +1,50 @@
+/*sign in style*/
+#signin {
+    display: none;
+    flex-direction: column;
+    top: 10%;
+    left: 65%;
+    border: 2px solid lightgoldenrodyellow;
+    border-radius: 5px;
+    width: 30%;
+    background-color: rgba(247, 245, 245, 0.85);
+    z-index: 200;
+    position: absolute;
+    margin: 5px;
+    padding: 10px;
+
+
+    /* display: none;
+    position: absolute;
+    margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 65%;
+    z-index: 100; */
+}
+
+.closeBtnDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.closeBtn {
+    justify-content: right;
+    width: 30px;
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 92%;
+}
+
+#signin input {
+    border: 1px solid black;
+}
+
+.signinMain:hover {
+    background-color: rgb(1, 1, 151);
+    text-decoration: none;
+}
