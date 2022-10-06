@@ -18,9 +18,14 @@
 }
 
 .PostBody {
+  display: inline-block;
+  height: 1.5rem;
   padding: 10px 0px 20px 0px;
+  margin-bottom: 1rem;
   word-wrap: break-word;
+  overflow: hidden;
 
+  /* white-space: nowrap; */
 }
 
 .DeleteButton {
@@ -45,6 +50,7 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
 .Post a:-webkit-any-link {
   text-decoration: none;
 }

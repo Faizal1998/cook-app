@@ -15,7 +15,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --mainFrameColor: rgb(122, 188, 239);
+  --green: rgb(18, 150, 18);
+  --white: #ffffff;
+  --black: black;
 }
