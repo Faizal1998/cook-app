@@ -153,7 +153,7 @@ function App() {
   const handleEdit = async (id) => {
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
     console.log(editBody, editTitle)
-    const updatedPost = { id, title: editTitle, datetime, body: editBody };
+    const updatedPost = { id, title: editTitle, datetime, body: editBody, author: displayName };
     try {
       /* const response=await api.put(`/posts/${id}`,updatedPost) */
       keys.map((dbkey) => {

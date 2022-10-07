@@ -21,18 +21,13 @@ const Header = ({ title, displayName, isLoggedIn, setIsLoggedIn, setDisplayName 
     event.preventDefault()
     console.log("handleSignUp");
     document.getElementById("signup").style.display = "flex";
+    document.getElementById("signin").style.display = "none";
   }
   const handleSignIn = (event) => {
     event.preventDefault()
     console.log("handleSignUp");
     document.getElementById("signin").style.display = "flex";
-  }
-  const handleDropDown = (e) => {
-    return (
-      <div id='profileDropDown'>
-        hello
-      </div>
-    )
+    document.getElementById("signup").style.display = "none";
   }
 
   return (

@@ -4,7 +4,7 @@
     display: none;
     flex-direction: column;
     top: 10%;
-    left: 55%;
+    /* left: 55%; */
     border: 2px solid lightgoldenrodyellow;
     border-radius: 5px;
     width: 40%;
@@ -48,6 +48,7 @@
     padding: 10px;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .signupMain {

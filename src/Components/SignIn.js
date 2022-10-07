@@ -72,7 +72,10 @@ class SignIn extends React.Component {
             this.setState({ SIGN_IN: true })
             this.props.setIsLoggedIn(true)
             this.props.setDisplayName(user.user.displayName);
-            this.props.setAccessToken(user.user.accessToken)
+            this.props.setAccessToken(user.user.accessToken);
+            document.getElementById("signin").style.display = "none"
+
+            // document.getElementById("signinForm").reset()
         } catch (error) {
             this.props.setIsLoggedIn(false)
             this.setState({ SIGN_IN: false })
@@ -122,10 +125,10 @@ class SignIn extends React.Component {
         // console.log(this.state.SIGN_IN, this.props.isLogged)
         // if (this.props.isLogged) {
 
-        document.getElementById("signin").style.display = "none"
-        // }
+        // document.getElementById("signin").style.display = "none"
+        // // }
 
-        document.getElementById("signinForm").reset()
+        // document.getElementById("signinForm").reset()
         return <Alert severity="success">This is a success message!</Alert>
     }
     // signout = (e) => {
@@ -144,9 +147,9 @@ class SignIn extends React.Component {
                     {this.state.SIGN_IN ? <h4 className="text-success">Logged in successfully</h4> : <h4 className="text-danger">{this.state.errorMsg}</h4>}
                     <form id='signinForm' className='d-flex justify-content-center row' onSubmit={this.onSigninSubmit}>
 
-                        <input type='email' required name="email" className='form-control m-3' placeholder='email' onChange={this.signinHandler} />
-                        <input type='password' required name='password' className='form-control m-3' placeholder='password' onChange={this.signinHandler} />
-                        <input type='submit' name='submit' className='form-control btn btn-success text-white col-3 m-2' value='Sign In' />
+                        <input type='email' required name="email" className='form-control m-3' placeholder='Email' onChange={this.signinHandler} />
+                        <input type='password' required name='password' className='form-control m-3' placeholder='Password' onChange={this.signinHandler} />
+                        <input type='submit' name='submit' className='signInButton form-control btn btn-success text-white col-3 m-2' value='Sign In' />
                         {this.state.SIGN_IN && <button onClick={() => (document.getElementById("signup").style.display = "flex")} className='form-control btn btn-success text-white col-3 m-2'>Sign Up</button>}
 
 

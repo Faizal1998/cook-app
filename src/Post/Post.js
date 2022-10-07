@@ -5,13 +5,13 @@ import './Post.css'
 const Post = ({ post }) => {
   return (
     <>
-      <article className='Post'>
+      <article className='mainPagePost'>
         <Link to={`/post/${post.id}`}>
           <h2>{post.title}</h2>
-          <p className='PostDate'>{post.datetime}</p>
+          <p className='mainPagePostDate'>{post.datetime}</p>
 
         </Link>
-        <p className='PostBody'><strong>{post.author ? post.author : "Anonymous"} : </strong>{
+        <p className='mainPagePostBody'><strong>{post.author ? post.author : "Anonymous"} : </strong>{
           // (post.body).length <= 50
           //   ? 
           post.body

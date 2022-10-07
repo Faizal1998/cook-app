@@ -115,15 +115,15 @@ const Signup = ({ setIsLoggedIn, displayName, setDisplayName, setAccessToken }) 
             <form id="signupForm" onSubmit={(event) => onSubmitSignUp(event)}>
                 <input type="text" className="inputEle" id="name" placeholder="Name*" name="name" value={name} onChange={(event) => onChangeHandler(event)} />
                 <input type="email" className="inputEle" id="email" placeholder="Email*" required name="email" value={email} onChange={(event) => onChangeHandler(event)} />
-                <input type="tel" className="inputEle" id="mobile" placeholder="Mobile No" name="mobile" value={mobile} onChange={(event) => onChangeHandler(event)} />
+                {/* <input type="tel" className="inputEle" id="mobile" placeholder="Mobile No" name="mobile" value={mobile} onChange={(event) => onChangeHandler(event)} /> */}
                 <input type="password" className="inputEle" id="password" placeholder="Password*" required name="password" value={password} onChange={(event) => onChangeHandler(event)} />
-                <label className="inputEle dob text-dark" for="dob">DOB</label>
+                {/* <label className="inputEle dob text-dark" for="dob">DOB</label>
                 <input type="date" className="inputEle" id="dob" placeholder="Name" name="dob" value={dob} onChange={(event) => onChangeHandler(event)} />
 
                 <div className="inputEle" >
                     <label className="text-dark" ><input name="gender" type="radio" value="male" onClick={(event) => onChangeHandler(event)} />Male</label>
                     <label className="text-dark" ><input name="gender" type="radio" value="female" onClick={(event) => onChangeHandler(event)} />Female</label>
-                </div>
+                </div> */}
                 <input type="submit" id="submitSignUp" name="submit" value="Create Account" />
                 {/* <Route>
                     <NavLink to="/" className="signupMain">Back to Main Page</NavLink>
