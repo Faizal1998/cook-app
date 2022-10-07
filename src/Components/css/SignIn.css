@@ -3,7 +3,7 @@
     display: none;
     flex-direction: column;
     top: 10%;
-    left: 65%;
+    /* left: 65%; */
     border: 2px solid lightgoldenrodyellow;
     border-radius: 5px;
     width: 30%;
@@ -38,13 +38,34 @@
     border-radius: 5px;
     margin: 10px;
     margin-left: 92%;
+    cursor: pointer;
 }
 
 #signin input {
     border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    margin: 0.5rem;
 }
 
 .signinMain:hover {
     background-color: rgb(1, 1, 151);
     text-decoration: none;
+}
+
+#signinForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.signInButton {
+    background-color: var(--green);
+    color: white;
+    width: 5rem;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
 }

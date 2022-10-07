@@ -1,0 +1,58 @@
+.Post {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 10px 0px 10px;
+    /* border-bottom: 2px solid rgba(0, 0, 0, 0.078); */
+}
+
+.Post h2 {
+    color: black;
+    /* font-size: 1rem; */
+    padding-bottom: 5px;
+}
+
+.PostDate {
+    color: black;
+    font-size: smaller;
+}
+
+.PostBody {
+    display: inline-block;
+    padding: 10px 0px 20px 0px;
+
+    /* white-space: nowrap; */
+}
+
+.DeleteButton {
+    width: 50px;
+    height: 20px;
+    background-color: red;
+    border: 0;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.EditButton {
+    width: 50px;
+    height: 20px;
+    background-color: rgb(0, 0, 0);
+    border: 0;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.Post a:-webkit-any-link {
+    text-decoration: none;
+}
+
+.PostNotFound {
+    margin-top: 20px;
+    color: red;
+    text-decoration: underline;
+}

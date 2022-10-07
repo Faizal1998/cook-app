@@ -1,4 +1,4 @@
-.Post {
+.mainPagePost {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -6,18 +6,18 @@
   /* border-bottom: 2px solid rgba(0, 0, 0, 0.078); */
 }
 
-.Post h2 {
+.mainPagePost h2 {
   color: black;
   /* font-size: 1rem; */
   padding-bottom: 5px;
 }
 
-.PostDate {
+.mainPagePostDate {
   color: black;
   font-size: smaller;
 }
 
-.PostBody {
+.mainPagePostBody {
   display: inline-block;
   height: 1.5rem;
   padding: 10px 0px 20px 0px;
@@ -51,7 +51,7 @@
   cursor: pointer;
 }
 
-.Post a:-webkit-any-link {
+.mainPagePost a:-webkit-any-link {
   text-decoration: none;
 }
 
