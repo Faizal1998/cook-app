@@ -20,7 +20,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 class SignIn extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.state = {
             email: "",
             password: " ",
@@ -43,7 +42,6 @@ class SignIn extends React.Component {
         else if (nam === "password") {
             this.setState({ password: val })
         }
-        console.log(this.state.email, this.state.password)
     }
 
 
@@ -57,7 +55,6 @@ class SignIn extends React.Component {
             email: this.state.email,
             password: this.state.password
         }
-        console.log(data.email)
 
         try {
             const user = await signInWithEmailAndPassword(

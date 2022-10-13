@@ -20,10 +20,10 @@ export default function profileDropDown({ displayName, profilePic, setIsLoggedIn
 
     // const [user, setUser] = useState('');
 
-    onAuthStateChanged(auth, (currentUser) => {
-        console.log(currentUser)
-        // setUser(currentUser);
-    });
+    // onAuthStateChanged(auth, (currentUser) => {
+    //     console.log(currentUser)
+    //     // setUser(currentUser);
+    // });
 
 
     const handleChange = async (event) => {
