@@ -34,15 +34,15 @@ function App() {
   const [displayName, setDisplayName] = useState("")
   const [isLoggedIn, setIsLoggedIn] = useState()
 
+
   const [state, setState] = useState({})
   const history = useNavigate();
-  console.log("display Name", displayName)
 
   //for realtime data from firebase 
   useEffect(() => {
     // const resultDb = ref(database);
-    const resultDb = query(ref(database), limitToLast(10));
-    console.log(resultDb)
+    const resultDb = query(ref(database), limitToLast(10)); //, 'blog-posts/'
+    // console.log(resultDb)
     onValue(resultDb, (snapshot) => {
       const data = snapshot.val();
 
@@ -106,10 +106,12 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+    console.log("id", posts[posts.length - 1], id);
     const datetime = format(new Date(), 'MMMM dd, yyyy pp');
     const newPost = { id, title: postTitle, datetime, body: postBody, author: displayName };
     try {
-      await api.post('/posts.json', newPost)
+      set(ref(database, 'posts/' + id), newPost);
+      // await api.post('/posts.json', newPost)
       //console.log("submit block",response.data)
       const allPosts = [...posts, newPost];//removed response and added newPost
 
